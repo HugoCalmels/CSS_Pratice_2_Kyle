@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1641258863072-22f0d5b53076?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1972&q=80');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 50px) calc(100% - 20px);
+}
+
+.box {
+  height: 100px;
+  background: pink;
+  width: calc(100% - 200px);
+}
+
+h1 {
+  font-size: calc(40px + 6vw); /* 40px + 6% */
+}

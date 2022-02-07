@@ -1,0 +1,25 @@
+.container {
+  background-color: red;
+  height: 100px;
+}
+
+
+.container {
+  --width: 100px; /* just creating a variable named "width"*/
+  width: calc(var(--width) *2);
+}
+
+:root {
+  --hue:50;
+}
+
+.primary {
+  /* background-color: hsl(120, 100%,15%); */
+  background-color: hsl(var(--hue), 100%, 50%);
+}
+
+.danger {
+  /* background-color: hsl(40, 100%,75%); */
+  background-color: hsl(calc(var(--hue) - 180), 100%, 50%);
+}
+

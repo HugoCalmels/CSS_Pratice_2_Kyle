@@ -1,0 +1,24 @@
+#parent {
+  height: 75vh; /* vh correspond a hauteur d'écran, donc 75% sur l'écran je pense*/
+  width: 75vh;
+  background: teal;
+  margin: 25vh auto;
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  
+}
+
+#abs {
+  background: orangered;
+  /*height: 80px;
+  width: 80px; remove those to see the flow overrid */
+  position: absolute;
+  top: 0;
+  left: 25%;
+  bottom: 0;
+  right: 25%;
+}
+
+/* z-index est une propriété de position absolute pour gérer les couches, et les overide */

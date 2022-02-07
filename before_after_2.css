@@ -1,0 +1,38 @@
+
+.required::before{
+  content: ''; /* do not forget the content, required for ::before */
+  display: block;
+  width:10px;
+  height:10px;
+  background-color: red;
+}
+
+.required::after{
+  content: ''; /* do not forget the content, required for ::before */
+  display: block;
+  width:10px;
+  height:10px;
+  background-color: blue;
+}
+
+/* drawing red box & blue box is cool but we can go further */
+/* waow, another way to call element from css, through data property */
+
+/* first to make the ::after work, we have to call the normal [data-tooltip] */
+[data-tooltip] {
+  position: relative; /* just to make sure to position the after ( mby child ) related to the parent */
+}
+
+[data-tooltip]:hover::after { /* notice the hover */
+  content: attr(data-tooltip); /* attribute function in css, gotta analyze it better, idk what it does */
+  /* as child element, we can use absolute position */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 5px;
+  padding: 5px;
+  background-color: lightgrey;
+}
+
+/* note that one element can pocess only one ::before and one ::after */

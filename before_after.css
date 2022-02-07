@@ -1,0 +1,86 @@
+/* cursor to select all
+* {
+  background-color: red;
+}
+*/
+
+/* training to learn before & after */
+p {
+  font-size: 45px;
+  font-family: "Lato";
+  margin-top: 200px;
+  text-align: center;
+}
+
+p::before {
+  content: 'slt'; /* nothing will work if there is no content*/
+  background: green;
+  width: 50px;
+  height: 50px;
+  /* display: block;  wont appear with display inline, idk why ?*/
+}
+
+p::after {
+  content: 'slt'; /* nothing will work if there is no content*/
+  background: green;
+  width: 50px;
+  height: 50px;
+  /* display: block;  wont appear with display inline, idk why ?*/
+}
+
+/* Another example with animations */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: blue;
+}
+
+.centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.btn {
+  position: relative;
+  display: block; /* to remove the display inline, which was also interesting */
+  color: brown;
+  font-size: 100px;
+  font-family: "Lato";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid purple;
+  padding: 80px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+
+.btn::before {
+  background: pink;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* third axe hidden, not X, not Y, more likely to concern 3D effects */
+  transition: all 0.6s ease;
+  width: 120%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(25deg); /* means -50 & -50 on X & Y */
+}
+
+.btn:hover::before {
+  height: 180%;
+}
+
+
+
+/* list of terms I dont know during this tutorial 
+- overflow
+- z-index
+- position absolute
+
