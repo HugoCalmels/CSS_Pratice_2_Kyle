@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style></style>
+</head>
+<body>
+  
+
+
+  <script>
+// on crée un objet vide
+// par exemple maVoiture = { make: 'Ford', model: 'Mustang', year: 1969}
+// ca marche un peu comme un array je pense
+let keys = {};
+
+window.addEventListener('keydown', (e) => {
+
+    // on pousse la key ( de l'event ) dans l'objet avec comme référence de base : true
+    // a noter que ca ne fait pas de doubles ..
+    keys[e.key] = true;
+    
+    // ici les conditions multiples
+    if(keys['ArrowDown'] && keys['ArrowLeft']) 
+        console.log('A + V');
+    
+        console.log(keys)
+});
+
+window.addEventListener('keyup', (e) => {
+
+    // tres simple, on reset chaque touche(s) utilisée(s) plus haut
+    keys[e.key] = false;
+    
+});
+
+
+/*
+     const controller = {
+  87: {pressed: false, func: 'player1.movePaddleUp'},
+  83: {pressed: false, func: 'player1.movePaddleDown'},
+  38: {pressed: false, func: 'player2.movePaddleUp'},
+  40: {pressed: false, func: 'player2.movePaddleDown'},
+}
+
+    const keys = [
+      {id: 37, pressed: false},
+      {id: 38, pressed: false},
+      {id: 39, pressed: false},
+      {id: 40, pressed: false}
+  ]
+
+
+    document.addEventListener('keydown', (e) => {
+      console.log('keydown addEventListener')
+      console.log(e.keyCode)
+      /*
+      keys.forEach((key) => {
+        console.log(key.id)
+        if (key.id !== e.keyCode) {
+          key.pressed = true
+        } else {
+          key.pressed = false
+        }
+      })
+      console.log(keys)
+
+
+    document.addEventListener("keyup", (e) => {
+      console.log('up addEventListener')
+      console.log(e.keyCode)
+      */
+      /*
+      keys.forEach((key) => {
+        if (key.id !== e.keyCode) {
+          key.pressed = false
+        } else {
+          key.pressed = true
+        }
+      })
+      console.log(keys)
+  
+    })
+
+
+
+
+*/
+
+ 
+
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    const person = {
+      firstName: 'Hugo',
+      lastName: 'Calmels',
+      /*
+      fullName() {
+        return `${person.firstName} ${person.lastName}`
+      }
+      */
+     // just added a 'get'
+      get fullName() {
+        return `${person.firstName} ${person.lastName}`
+      },
+
+      // however this method needs a parameter ( value )
+      set fullName(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+      }
+    }
+
+    // good method to get informations, but we can do smaller
+    console.log(`${person.firstName} ${person.lastName}`)
+
+    // shorter ..
+    // console.log(person.fullName())
+
+    // getters => access properties
+    // setters => change (mutate) them
+    console.log(person)
+    person.fullName = "John Wick"
+    console.log(person)
+  </script>
+</body>
+</html>

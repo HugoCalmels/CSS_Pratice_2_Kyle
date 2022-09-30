@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      position: absolute;
+      top: calc((50) * 1vh);
+      left: calc((50) * 1vw);
+      background: #777777;
+      padding: 20px;
+      color: white;
+      font-size: 20px;
+      width: 300px;
+    }
+
+    #text {
+      font-weight: bold;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>getComputedStyle() - Javascript</h1>
+
+  <div id="box">
+    <span id="text">Here is some sample text. Subscribe to dcode!</span>
+  </div>
+  
+  <script>
+    const box = document.getElementById("box");
+    const text = document.getElementById("text");
+
+    // box computed style
+    const boxCS = window.getComputedStyle(box);
+    // enormous node here, all possibles options such as borderTopWidth & co 
+    console.log(boxCS)
+    console.log(boxCS.background)
+    console.log(boxCS.backgroundColor)
+    console.log(boxCS.direction)
+    console.log(boxCS.height)
+    console.log(boxCS.getPropertyValue('font-size'))
+  </script>
+</body>
+</html>

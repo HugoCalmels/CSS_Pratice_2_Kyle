@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background: blue;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="title">Element.getBoundingClientRect</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error, debitis, qui placeat voluptatibus ipsa quaerat perferendis porro aspernatur a minus? Quia, optio accusamus eos fuga commodi veritatis illum ducimus provident magni ex quo itaque? Aliquam dolor error eaque ea aliquid ducimus illum totam, minus sit est quia voluptate, quod mollitia quam in excepturi obcaecati iste deserunt saepe nesciunt? Tempore consequatur nulla nesciunt perspiciatis itaque, laboriosam hic culpa dolor voluptatum fugit incidunt ipsam laborum vitae accusamus quod, saepe aspernatur blanditiis quibusdam earum?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error, debitis, qui placeat voluptatibus ipsa quaerat perferendis porro aspernatur a minus? Quia, optio accusamus eos fuga commodi veritatis illum ducimus provident magni ex quo itaque? Aliquam dolor error eaque ea aliquid ducimus illum totam, minus sit est quia voluptate, quod mollitia quam in excepturi obcaecati iste deserunt saepe nesciunt? Tempore consequatur nulla nesciunt perspiciatis itaque, laboriosam hic culpa dolor voluptatum fugit incidunt ipsam laborum vitae accusamus quod, saepe aspernatur blanditiis quibusdam earum?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error, debitis, qui placeat voluptatibus ipsa quaerat perferendis porro aspernatur a minus? Quia, optio accusamus eos fuga commodi veritatis illum ducimus provident magni ex quo itaque? Aliquam dolor error eaque ea aliquid ducimus illum totam, minus sit est quia voluptate, quod mollitia quam in excepturi obcaecati iste deserunt saepe nesciunt? Tempore consequatur nulla nesciunt perspiciatis itaque, laboriosam hic culpa dolor voluptatum fugit incidunt ipsam laborum vitae accusamus quod, saepe aspernatur blanditiis quibusdam earum?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error, debitis, qui placeat voluptatibus ipsa quaerat perferendis porro aspernatur a minus? Quia, optio accusamus eos fuga commodi veritatis illum ducimus provident magni ex quo itaque? Aliquam dolor error eaque ea aliquid ducimus illum totam, minus sit est quia voluptate, quod mollitia quam in excepturi obcaecati iste deserunt saepe nesciunt? Tempore consequatur nulla nesciunt perspiciatis itaque, laboriosam hic culpa dolor voluptatum fugit incidunt ipsam laborum vitae accusamus quod, saepe aspernatur blanditiis quibusdam earum?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error, debitis, qui placeat voluptatibus ipsa quaerat perferendis porro aspernatur a minus? Quia, optio accusamus eos fuga commodi veritatis illum ducimus provident magni ex quo itaque? Aliquam dolor error eaque ea aliquid ducimus illum totam, minus sit est quia voluptate, quod mollitia quam in excepturi obcaecati iste deserunt saepe nesciunt? Tempore consequatur nulla nesciunt perspiciatis itaque, laboriosam hic culpa dolor voluptatum fugit incidunt ipsam laborum vitae accusamus quod, saepe aspernatur blanditiis quibusdam earum?</p>
+  <div class="box"></div>
+  
+  <script>
+    const box = document.querySelector('.box')
+    const rect = box.getBoundingClientRect()
+    console.log(rect)
+
+    window.addEventListener("scroll", function () {
+      console.log(window.innerHeight)
+      console.log(box.getBoundingClientRect().top)
+      if ((box.getBoundingClientRect().top) < window.innerHeight){
+        box.style.background = "red"
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      position: relative;
+      height: 100vh;
+      background: yellow;
+    }
+    #ball {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid black;
+      width: 5vh;
+      height: 5vh;
+      background: orange;
+    }
+  </style>
+</head>
+<body>
+  <div id="ball"></div>
+  
+  <script>
+    const ball = document.querySelector('#ball');
+
+    let index = 0
+    window.addEventListener('keydown', (e) => {
+  
+      if (e.key === 'ArrowLeft') {
+        console.log(e.key)
+        ball.style.left = `${index}vh`
+        index +=1
+      }
+        
+    })
+  </script>
+</body>
+</html>

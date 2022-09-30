@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Intersection Observer</title>
+  <style>
+    body{
+      font-family: 'Noto Sans', sans-serif;
+      padding: 2.5vw 5vw;
+      background: #222;
+    }
+    h1{
+      font-size: clamp(30px, 7vw, 90px);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 span:nth-child(1){
+      font-weight: 700;
+    }
+    h1 span:nth-child(2){
+      font-weight: 100;
+    }
+    .line{
+      width: 1px;
+      margin: calc(2vw + 10px) auto;
+      background: white;
+      height: clamp(125px, 10vw, 250px);
+    }
+    .images-container{
+      display: grid;
+      max-width: 800px;
+      margin: 0 auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+    .images-container img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2s;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <span>YOUR STYLE,</span>
+    <span>OUR WORK</span>
+  </h1>
+  <div class="line"></div>
+  <div class="images-container">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+    <img src="https://images.unsplash.com/photo-1645814995898-b144afb8d846?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=667&q=80">
+  </div>
+
+
+  
+  <script>
+    const images = document.querySelectorAll(".images-container img")
+
+    let options = {
+      // root:null , de base ca prend notre fenetre window
+      rootMargin: "-10% 0px", // déjà vu, change la window
+      treshold: 0, // le seuil de déclenchement
+      // treshold va de 0 pour tout en haut, à 1 pour tout en bas
+    }
+
+    // function handleIntersect
+    function handleIntersect(entries){
+      console.log(entries)
+
+      entries.forEach((entry) => {
+        console.log(entry.isIntersecting)
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1; // .target
+        } else {
+          entry.target.style.opacity = 0;
+        }
+      })
+    }
+
+    // on met en place notre observer
+    // prendra 2 parametres en options, ehm .. why 2?
+    const observer = new IntersectionObserver(handleIntersect, options)
+
+     // pour chaque image, on a envie de "l'observer"
+     images.forEach((image) => {
+      observer.observe(image) // mon objet "observateur" .method observe()
+    })
+    
+
+    
+
+   
+    
+
+  </script>
+</body>
+</html>

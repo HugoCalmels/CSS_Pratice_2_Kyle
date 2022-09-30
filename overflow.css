@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-size: 30px;
+  height: 100vh;
+  display: grid;
+  place-items: center; /* Actually surprised by this way to CENTER MY DIV */
+}
+
+
+.container1 {
+  width: 70%;
+  background-color: blueviolet !important;
+  height: 50px;
+  overflow: visible /* default value, changes nothing */
+}
+
+.container2 {
+  width: 70%;
+  background-color: blueviolet !important;
+  height: 50px;
+  overflow: hidden;
+}
+
+.container3 {
+  width: 70%;
+  background-color: blueviolet !important;
+  height: 50px;
+  overflow: scroll;
+}
+
+.container4 {
+  width: 70%;
+  background-color: blueviolet !important;
+  height: 50px;
+  overflow-y: scroll;
+}
+
+.container5 {
+  width: 70%;
+  background-color: blueviolet !important;
+  height: 50px;
+  overflow-y: auto;
+}

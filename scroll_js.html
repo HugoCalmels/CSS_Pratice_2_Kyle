@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      font-size:50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scroll Event - Javascript</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit repellendus iusto voluptatem consequatur atque! Hic nulla neque iure ullam veniam assumenda voluptatum at beatae doloremque tempora esse error</p>
+
+  
+  <script>
+    window.addEventListener("scroll", function() {
+      //console.log("hi")
+      const scrolled = window.scrollY;
+
+      // ammount of scrollable, js will scroll for me
+      // documentElement to catch the root of the node's elements 
+      // not sure I understood tho, poor documentation on documentElement
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+
+
+      console.log(scrollable)
+
+      console.log(Math.floor(scrolled))
+
+      if (Math.floor(scrolled) === scrollable) {
+        alert('you\'ve reached the bottom')
+      }
+    })
+  </script>
+</body>
+</html>
